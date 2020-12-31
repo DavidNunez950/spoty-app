@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+<nav class=" w-full | text-lg text-center text-gray-300 | bg-black ">
+    <div class="container | m-auto| flex align-middle ">
+        <div class=" flex p-1 ">
+            <img src="assets/image/spotify-logo.png" alt="spotify-logo" class=" h-9 | pr-3 ">
+            <h1 class=" text-xl text-gray-50 font-bold | pr-3 ">
+                <a routerLink="home">
+                    Spotify-app
+                </a>
+            </h1>
+        </div>
+        <ul class=" flex flex-row justify-between m-0 p-0">
+            <li routerLinkActive=" text-gray-50 bg-gradient-to-t from-green-800 to from-green-300" class=" p-2 ">
+                <a routerLink="home">Home</a>
+            </li>
+            <li routerLinkActive=" text-gray-50 bg-gradient-to-t from-green-800 to from-green-300" class=" p-2 ">
+                <a routerLink="search">Search</a>
+            </li>
+        </ul>
+    </div>
+</nav>
