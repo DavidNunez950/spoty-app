@@ -1,0 +1,5 @@
+<section class=" flex flex-row flex-nowrap overflow-x-auto hidden-scroll-bar max-h-96" id="scroll">
+    <article class="w-full h-full " (mousedown)=" dragStart($event) " *ngFor=" let item of items ">
+        <app-card class="w-full" [artist]=" item.artists[0].name " [titel]="  item.name " [type]="   item.album_type " [date]="   item.release_date " [img]=" item.images[0].url "></app-card>
+    </article>
+</section>

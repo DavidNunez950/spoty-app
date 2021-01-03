@@ -8,8 +8,9 @@ import { SpotifyService } from '../../../services/spotify.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor( private spotify:SpotifyService) { 
+  constructor( private spotify:SpotifyService ) { 
     this.spotify.getNewRealasis();}
+
 
   ngOnInit(): void {
 
