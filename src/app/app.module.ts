@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './components/card/card.component';
 import { DragScrollComponent } from './components/drag-scroll/drag-scroll.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DragScrollComponent } from './components/drag-scroll/drag-scroll.compon
     SearchComponent,
     NavbarComponent,
     CardComponent,
-    DragScrollComponent
+    DragScrollComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

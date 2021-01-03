@@ -1,10 +1,22 @@
 import { AfterViewInit } from '@angular/core';
+import { ElementRef } from '@angular/core';
 import { Input, ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-drag-scroll',
-  templateUrl: './drag-scroll.component.html',
+  template: `
+  <section #scroll class=" flex flex-row flex-nowrap | overflow-x-auto overflow-y-hidden hidden-scroll-bar " id="scroll">
+      <app-card 
+        *ngFor = " let item of items " 
+        (mousedown) = " dragStart($event)" 
+        [artist] = " item.artists[0].name " 
+        [titel]  = " item.name " 
+        [type]   = " item.album_type "
+        [img]    = " item.images[0].url "
+      ></app-card>
+  </section>
+  `,
   styleUrls: ['./drag-scroll.component.scss']
 })
 
@@ -12,6 +24,9 @@ export class DragScrollComponent implements AfterViewInit{
 
   @Input() items:any[];
   slider:any;
+  
+  @ViewChild('scroll')
+  scroll: ElementRef;
 
   constructor() { 
     console.log(" helo wordl!!! ")
@@ -20,13 +35,11 @@ export class DragScrollComponent implements AfterViewInit{
   
 
   ngAfterViewInit(): void {
-    this.slider = document.getElementById('scroll');
-    console.log(  )
+    this.slider = this.scroll.nativeElement;
   }
 
   dragStart(e) {
     this.unFocus();
-    this.slider.classList.add("active");
     let isDown = true;
     let startX = e.pageX - this.slider.offsetLeft;
     let scrollLeft = this.slider.scrollLeft;
@@ -63,18 +76,21 @@ export class DragScrollComponent implements AfterViewInit{
 /*
 @Component({
   selector: 'app-drag-scroll',
-  templateUrl: './drag-scroll.component.html'
-//   template: `
-//     <section class=" flex flex-row flex-nowrap overflow-x-auto " class=" scroll "   >
-//         <article class="h-min min-w-7xl max-w-screen-2xl "  (click)=" dragStart() "  *ngFor=" let item of items ">
-//             <app-card 
-//               [artist]=" item.artists[0].name " 
-//               [titel]="  item.name " 
-//               [type]="   item.album_type " 
-//               [date]="   item.release_date " 
-//               [img]="    item.images[0].url "
-//             ></app-card>
-//         </article>
+  @Component({
+  selector: 'app-drag-scroll',
+  template: `
+  <section class=" flex flex-row flex-nowrap overflow-x-auto hidden-scroll-bar max-h-96" id="scroll">
+      <app-card 
+        *ngFor=" let item of items " 
+        (mousedown)=" dragStart($event)" 
+        [artist]=" item.artists[0].name " 
+        [titel]="  item.name " [type]="   
+        item.album_type " [date]="   
+        item.release_date " 
+        [img]=" item.images[0].url "
+      ></app-card>
+  </section>
+  `
 //     </section>
 // `
 })

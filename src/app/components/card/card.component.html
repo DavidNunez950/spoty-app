@@ -1,20 +1,19 @@
-<div class=" p-3  w-full ">
-    <article class="overflow-hidden bg-das-700 rounded-lg shadow-lg p-3 w-full ">
-        <a href="#" class=" rounded ">
-            <img alt="Placeholder" style="min-width:174px;height:175px;" [src]=" img ">
-        </a>
-        <div class="flex flex-col items-start  justify-start leading-tight p-2 md:p-4">
-            <h1 class="text-sm">
-                <a class="no-underline hover:underline text-gray-50" href="#">
-                    <span>{{ titel }}</span>
-                </a>
-            </h1>
-            <p class="w-full text-gray-400 text-sm">
-                {{ artist }}
-            </p>
-            <!-- <p class="text-right w-full text-gray-400 text-sm">
-                {{ artist }} - {{ type }} <br> {{ date }}
-            </p> -->
-        </div>
-    </article>
+<div class=" h-full | w-full ">
+    <div class=" m-3 ">
+        <article class=" p-3 | overflow-hidden | bg-dark-700 | rounded-sm | shadow-lg ">
+            <a href="#" class=" shadow-2xl ">
+                <img alt="Placeholder" class=" rounded-sm " style="min-width:174px;height:175px;" [src]=" img ">
+            </a>
+            <div class=" flex flex-col items-start justify-start | leading-tight | py-3">
+                <h1 class="text-sm">
+                    <a class="no-underline hover:underline | text-white text-no-wrap whitespace-nowrap font-bold " href="#">
+                        <span>{{ titel | truncate: '19' }}</span>
+                    </a>
+                </h1>
+                <p class=" text-dark-500 text-sm font-semibold">
+                    {{ artist }}
+                </p>
+            </div>
+        </article>
+    </div>
 </div>

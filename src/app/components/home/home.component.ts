@@ -8,6 +8,8 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class HomeComponent {
 
+  
+  todayDate : Date = new Date();
   songs:any[];
   
   constructor( private spotify:SpotifyService ) {

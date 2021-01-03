@@ -17,7 +17,7 @@ export class SpotifyService {
         let songs = [];
 
         const headers = new HttpHeaders({
-            'Authorization': 'Bearer BQDBcmi3gKSUfzrJ0cqiwU4fQn5RM8rz0aJt2FNsaU69-BDlon7bsi7FuBfRpBz8CnIznnL7Ds-FFsrDHZM'
+            'Authorization': 'Bearer BQCFOs8g-HmeGaK-nPRbCsb1knNF9zI0AU76-ca_j-8U5Who8l70dd61K0RTECLe28dFzgDkuqIfSbqWa7I'
         })
 
         this.http.get( `https://api.spotify.com/v1/browse/new-releases?country=${ country }&limit=${ limit }&offset=1`, { headers })

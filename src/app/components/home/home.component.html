@@ -1,11 +1,9 @@
-<article class=" p-3 p-auto | max-h-full h-full | max-w-full w-full | bg-das-800 | container ">
-    <h1 class=" text-gray-50  text-2xl font-bold ">The 20 new releases: </h1>
-    <app-drag-scroll [items]=" songs "></app-drag-scroll>
-
-    <!-- <section class=" flex flex-row flex-nowrap overflow-x-auto ">
-        <article class="h-min min-w-7xl max-w-screen-2xl " *ngFor=" let song of songs ">
-            <app-card [artist]=" song.artists[0].name " [titel]=" song.name " [type]=" song.album_type " [date]=" song.release_date " [img]=" song.images[0].url "></app-card>
-        </article>
-    </section> -->
-
-</article>
+<section class=" container | p-3 p-auto | h-full | w-full | bg-dark-800 | overflow-auto hidden-scroll-bar ">
+    <article>
+        <div class=" p-3 | text-white ">
+            <h1 class=" text-2xl font-bold ">The 20 new releases: </h1>
+            <p>The 20 new releases of {{ todayDate | date:'yyyy'}}</p>
+        </div>
+        <app-drag-scroll [items]=" songs "></app-drag-scroll>
+    </article>
+</section>
