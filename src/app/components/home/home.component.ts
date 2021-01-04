@@ -11,9 +11,18 @@ export class HomeComponent {
   
   todayDate : Date = new Date();
   songs:any[];
+  artist:any[];
   
   constructor( private spotify:SpotifyService ) {
-    this.songs = this.spotify.getNewRealasis()
+    this.spotify.getNewRealasis()
+    .subscribe((data:any) => {
+      this.songs = data; 
+    });
+    this.spotify.getArtist()
+    .subscribe((data:any) => {
+        console.log(data)
+      this.artist = data.sort(function() {return Math.random() - 0.5});
+    });
    }
 
 }

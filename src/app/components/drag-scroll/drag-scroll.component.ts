@@ -10,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
       <app-card 
         *ngFor = " let item of items " 
         (mousedown) = " dragStart($event)" 
-        [artist] = " item.artists[0].name " 
+        [artist] = " (item.artists != undefined) ? item.artists[0].name : '' " 
         [titel]  = " item.name " 
-        [type]   = " item.album_type "
+        [type]   = " ( item.album_type     != undefined) ? item.album_type : '' "
         [img]    = " item.images[0].url "
       ></app-card>
   </section>
@@ -31,8 +31,6 @@ export class DragScrollComponent implements AfterViewInit{
   constructor() { 
     console.log(" helo wordl!!! ")
   }
-
-  
 
   ngAfterViewInit(): void {
     this.slider = this.scroll.nativeElement;
@@ -69,82 +67,3 @@ export class DragScrollComponent implements AfterViewInit{
     }
   }
 }
-
-
-
-
-/*
-@Component({
-  selector: 'app-drag-scroll',
-  @Component({
-  selector: 'app-drag-scroll',
-  template: `
-  <section class=" flex flex-row flex-nowrap overflow-x-auto hidden-scroll-bar max-h-96" id="scroll">
-      <app-card 
-        *ngFor=" let item of items " 
-        (mousedown)=" dragStart($event)" 
-        [artist]=" item.artists[0].name " 
-        [titel]="  item.name " [type]="   
-        item.album_type " [date]="   
-        item.release_date " 
-        [img]=" item.images[0].url "
-      ></app-card>
-  </section>
-  `
-//     </section>
-// `
-})
-
-export class DragScrollComponent implements OnInit {
-
-  @Input() items:any[];
-  slider:any = document.querySelector ('#slider');
-
-  constructor() { setTimeout(() => {
-    console.log( this )
-  }, 3000);  console.log( 
-    "asdasd"
-   )
-  }
-
-
-ngAfeterViewInit():void {
-  console.log( this )
-}
-
-  ngOnInit(): void {
-  // const slider = document.querySelector(".scroll");console.log( this )
-  console.log( this )
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-  console.log("this.slider")
-  this.slider.addEventListener("mousedown", (e:MouseEvent) => {
-    isDown = true;
-    this.slider.classList.add("active");
-      startX = e.pageX - this.slider.offsetLeft;
-    scrollLeft = this.slider.scrollLeft;
-  });
-  this.slider.addEventListener("mouseleave", () => {
-    isDown = false;
-    this.slider.classList.remove("active");
-  });
-  this.slider.addEventListener("mouseup", () => {
-    isDown = false;
-    this.slider.classList.remove("active");
-  });
-  this.slider.addEventListener("mousemove", e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - this.slider.offsetLeft;
-    const walk = x - startX;
-    this.slider.scrollLeft = scrollLeft - walk;
-  });
-
-  
-  }
-
-  dragStart():void {
-    console.log("asdasdasr")
-  }
-}*/ 
