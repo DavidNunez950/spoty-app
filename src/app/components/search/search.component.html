@@ -1,1 +1,11 @@
-<p>search works!</p>
+<section class=" container | p-3 p-auto | h-full | w-full | bg-dark-800 | overflow-auto hidden-scroll-bar ">
+    <article>
+        <section class=" p-3 | text-white ">
+            <h1 class=" text-2xl font-bold ">The 20 new releases: </h1>
+            <input type="text" class=" bg-white | text-black | w-1/4 | py-2 px-5 | rounded-full " (keyup)="search($event.target)">
+        </section>
+        <section class=" grid grid-cols-5 ">
+            <app-card *ngFor=" let item of items " [artist]=" (item.artists != undefined) ? item.artists[0].name : '' " [titel]=" item.name " [type]=" ( item.album_type     != undefined) ? item.album_type : '' " [img]=" (item.images[0] != undefined) ? item.images[0].url : '' "></app-card>
+        </section>
+    </article>
+</section>

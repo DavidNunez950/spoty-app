@@ -18,9 +18,8 @@ export class HomeComponent {
     .subscribe((data:any) => {
       this.songs = data; 
     });
-    this.spotify.getArtist()
+    this.spotify.getArtists()
     .subscribe((data:any) => {
-        console.log(data)
       this.artist = data.sort(function() {return Math.random() - 0.5});
     });
    }
