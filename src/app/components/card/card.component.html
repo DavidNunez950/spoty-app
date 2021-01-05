@@ -1,8 +1,8 @@
 <div class=" h-full | w-full ">
     <div class=" m-3 ">
         <article class=" p-3 | overflow-hidden | bg-dark-700 | rounded-sm | shadow-lg ">
-            <a href="#" class=" shadow-2xl " *ngIf=" img.length > 0 ">
-                <img alt="Placeholder" [ngClass]=" { 'rounded-full': this.artist == '', 'rounded-sm': this.artist != '' } " style="min-width:174px;height:175px;" [src]=" img ">
+            <a href="#" class=" shadow-2xl ">
+                <img alt="Placeholder" [ngClass]=" { 'rounded-full': this.artist == '', 'rounded-sm': this.artist != '' } " style="min-width:174px;height:175px;" [src]=" img | noimage">
             </a>
             <div class=" flex flex-col items-start justify-start | leading-tight | py-3">
                 <h1 class="text-sm">

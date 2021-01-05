@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
         [artist] = " (item.artists != undefined) ? item.artists[0].name : '' " 
         [titel]  = " item.name " 
         [type]   = " ( item.album_type     != undefined) ? item.album_type : '' "
-        [img]    = " item.images[0].url "
+        [img]    = " item.images "
       ></app-card>
   </section>
   `,
