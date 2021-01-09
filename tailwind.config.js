@@ -15,7 +15,6 @@ module.exports = {
         colors: {
             transparent: 'transparent',
             current: 'currentColor',
-
             black: colors.black,
             white: colors.white,
             gray: colors.coolGray,
@@ -27,6 +26,11 @@ module.exports = {
             purple: colors.violet,
             pink: colors.pink,
             dark: colors.dark,
+            darken: {
+                DEFAULT: '#121212',
+                light: '#181818',
+                hover: '#282828',
+            }
         },
         spacing: {
             px: '1px',
