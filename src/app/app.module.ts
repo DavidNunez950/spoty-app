@@ -11,6 +11,7 @@ import { CardComponent } from './components/card/card.component';
 import { DragScrollComponent } from './components/drag-scroll/drag-scroll.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     CardComponent,
     DragScrollComponent,
     TruncatePipe,
-    NoimagePipe
+    NoimagePipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

@@ -8,12 +8,13 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class HomeComponent {
 
-  
+  loading : boolean;
   todayDate : Date = new Date();
   songs:any[];
   artist:any[];
   
   constructor( private spotify:SpotifyService ) {
+    this.loading = true;
     this.spotify.getNewRealasis()
     .subscribe((data:any) => {
       this.songs = data; 
@@ -21,6 +22,7 @@ export class HomeComponent {
     this.spotify.getArtists()
     .subscribe((data:any) => {
       this.artist = data.sort(function() {return Math.random() - 0.5});
+      this.loading = false;
     });
    }
 
