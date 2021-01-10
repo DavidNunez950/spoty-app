@@ -4,14 +4,14 @@
             <h1 class=" text-2xl font-bold ">The 20 new releases: </h1>
             <p>The 20 new releases of {{ todayDate | date:'yyyy'}}</p>
         </div>
-        <app-drag-scroll [items]=" songs "></app-drag-scroll>
+        <app-card [items]=" songs "></app-card>
     </article>
     <article>
         <div class=" p-3 |  text-white ">
             <h1 class=" text-2xl font-bold ">See your favorite artists</h1>
             <p>This year's most listened to artists</p>
         </div>
-        <app-drag-scroll [items]=" artist "></app-drag-scroll>
+        <app-card [items]=" artist "></app-card>
     </article>
 </section>
 <app-loading *ngIf=" loading "></app-loading>

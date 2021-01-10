@@ -17,11 +17,13 @@ export class HomeComponent {
     this.loading = true;
     this.spotify.getNewRealasis()
     .subscribe((data:any) => {
+      console.log(data)
       this.songs = data; 
     });
     this.spotify.getArtists()
     .subscribe((data:any) => {
       this.artist = data.sort(function() {return Math.random() - 0.5});
+      console.log(data)
       this.loading = false;
     });
    }

@@ -8,12 +8,8 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <section #scroll class=" flex flex-row flex-nowrap | overflow-x-auto overflow-y-hidden hidden-scroll-bar " id="scroll">
       <app-card 
-        *ngFor = " let item of items " 
         (mousedown) = " dragStart($event)" 
-        [artist] = " (item.artists != undefined) ? item.artists[0].name : '' " 
-        [titel]  = " item.name " 
-        [type]   = " ( item.album_type     != undefined) ? item.album_type : '' "
-        [img]    = " item.images "
+        [items] =" items "
       ></app-card>
   </section>
   `,
