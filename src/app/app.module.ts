@@ -12,6 +12,8 @@ import { DragScrollComponent } from './components/drag-scroll/drag-scroll.compon
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { LoadingComponent } from './loading/loading.component';
+import { ArtistComponent } from './components/artist/artist.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { LoadingComponent } from './loading/loading.component';
     DragScrollComponent,
     TruncatePipe,
     NoimagePipe,
-    LoadingComponent
+    LoadingComponent,
+    ArtistComponent,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,

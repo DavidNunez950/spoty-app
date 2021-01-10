@@ -1,0 +1,32 @@
+<section>
+    <div class=" flex items-center ">
+        <img [src]="artist.images | noimage" [alt]="artist.name" class=" rounded-full border-4 border-gray-50 " width="100px" style="max-height:100px">
+        <h1 class=" text-white text-4xl h-full pl-3 ">{{ artist.name }}</h1>
+    </div>
+    <div class=" m-4">
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Album</th>
+                    <th>Song</th>
+                    <th>Previously view</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor=" let track of topTracks ">
+                    <td>
+                        <img [src]="track.album.images | noimage" [alt]="track.name" class=" rounded-full border-4 border-gray-50 " width="100px" style="max-height:100px">
+                    </td>
+                    <td>{{ track.album.name }}</td>
+                    <td>{{ track.name }}</td>
+                    <td>
+                        <!-- <audio [src]="track.preview_url" controls></audio> -->
+                        <!-- <iframe src="https://open.spotify.com/embed?uri=spotify:track:0AUvWawuP0ibk4SQ3sIZjk" width="317" height="397" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+                        <iframe [src]=" track.album.id | domseguro " width="317" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

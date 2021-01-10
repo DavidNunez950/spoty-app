@@ -5,7 +5,7 @@
             <input type="text" class=" bg-white | text-black | w-1/4 | py-2 px-5 | rounded-full " (keyup)="search($event.target)">
         </section>
         <section class=" grid grid-cols-5 ">
-            <app-card *ngFor=" let item of items " [artist]=" (item.artists != undefined) ? item.artists[0].name : '' " [titel]=" item.name " [type]=" ( item.album_type != undefined) ? item.album_type : '' " [img]=" item.images "></app-card>
+            <app-card *ngFor=" let item of items " [artist]=" (item.artists != undefined) ? item.artists[0].name : '' " [titel]=" item.name " [type]=" ( item.album_type != undefined) ? item.album_type : '' " [img]=" item.images " [artistId]=" item.id "></app-card>
         </section>
     </article>
     <app-loading *ngIf=" loading "></app-loading>
