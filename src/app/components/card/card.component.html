@@ -1,5 +1,5 @@
-<section class=" flex flex-row  " (click)=" dragStart($event) " [ngClass]="{'flex-nowrap overflow-x-auto overflow-y-hidden hidden-scroll-bar' : dragScroll == true}">
-    <div class=" h-full | w-full " *ngFor=" let item of items ">
+<section class=" grid grid-cols-5 ">
+    <div *ngFor=" let item of items " class=" h-full | w-full ">
         <div class=" m-3 ">
             <article (click)=" getArtist( item ) " class=" p-3 | overflow-hidden | bg-darken-light hover:bg-darken-hover transition duration-300 | rounded-sm | shadow-lg ">
                 <a href="#" class=" shadow-2xl ">
@@ -7,7 +7,7 @@
                 </a>
                 <div class=" flex flex-col items-start justify-start | leading-tight | py-3">
                     <h1 class="text-sm">
-                        <a class="no-underline hover:underline | text-white text-no-wrap whitespace-nowrap font-bold " href="#">
+                        <a class="no-underline hover:underline | text-white text-no-wrap whitespace-nowrap font-bold ">
                             <span>{{ item.name | truncate: '19' }}</span>
                         </a>
                     </h1>

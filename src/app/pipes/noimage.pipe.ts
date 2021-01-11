@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class NoimagePipe implements PipeTransform {
 
   transform(images: any[]): string {
-    return( (images.length > 0 && images) ? images[0].url : 'assets/image/image_404.jpg');
+    return( (images && images.length > 0) ? images[0].url : 'assets/image/image_404.jpg');
   }
 
 }

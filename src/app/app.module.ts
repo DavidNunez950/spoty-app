@@ -1,19 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+// Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './components/card/card.component';
-import { DragScrollComponent } from './components/drag-scroll/drag-scroll.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { ArtistComponent } from './components/artist/artist.component';
+
+// Pipes 
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { NoimagePipe } from './pipes/noimage.pipe';
-import { LoadingComponent } from './loading/loading.component';
-import { ArtistComponent } from './components/artist/artist.component';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
+
+// Routes
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,6 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
     SearchComponent,
     NavbarComponent,
     CardComponent,
-    DragScrollComponent,
     TruncatePipe,
     NoimagePipe,
     LoadingComponent,

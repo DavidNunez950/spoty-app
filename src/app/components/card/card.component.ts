@@ -12,46 +12,12 @@ import { Router } from '@angular/router';
 export class CardComponent {
 
   @Input() items:any[];
-  @Input() dragScroll: boolean;
   
-  constructor(private router: Router) { this.dragScroll = true;}
+  constructor(private router: Router) { }
 
   getArtist(item: any) {
     let id: string = (item.artists == undefined) ? item.id : item.artists[0].id;
     this.router.navigate(['/artist', id])
     return false;
-  }
-
-  dragStart(e) {
-    console.log(e)
-    let slider = e.target; 
-    let isDown = true;
-    let startX = e.pageX - slider.offsetLeft;
-    let scrollLeft = slider.scrollLeft;
-    this.unFocus(slider);
-    slider.addEventListener("mouseleave", () => {
-      isDown = false;
-      slider.classList.remove("active");
-    });
-    slider.addEventListener("mouseup", () => {
-      isDown = false;
-      slider.classList.remove("active");
-    });
-    slider.addEventListener("mousemove", e => {
-      this.unFocus(slider);
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 3;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-  }
-
-   private unFocus(slider): void {
-    if (slider.selection) {
-      slider.empty()
-    } else {
-      window.getSelection().removeAllRanges()
-    }
   }
 }
